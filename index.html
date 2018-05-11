@@ -30,6 +30,25 @@
             margin: auto;
             padding-bottom: 200px;
         }
+        
+        /* https://stackoverflow.com/a/35153397 */
+        /* This element defines the size the iframe will take.
+        In this example we want to have a ratio of 25:14 */
+        .aspect-ratio {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 56%; /* The height of the item will now be 56% of the width. */
+        }
+
+        /* Adjust the iframe so it's rendered in the outer-width and outer-height of it's parent */
+        .aspect-ratio iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+}
     </style>
 </head>
 
@@ -39,8 +58,10 @@
 
         <h2>Computer Graphics, Animation, Filmmaking and Photography</h2>
 
-        <iframe src="https://player.vimeo.com/video/269062280" width="100%" height="360" frameborder="0" 
-        webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <div class="aspect-ratio">
+                <iframe src="https://player.vimeo.com/video/269062280" width="640" height="360" frameborder="0" 
+                webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
         <p>
             You can also
             <a href="https://www.dropbox.com/s/9gd8f0g9ppjfevd/samples.mp4" target="_blank">download the original video.</a>
